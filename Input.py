@@ -28,11 +28,10 @@ def run_thread():
 	stream = audio.open(format=FORMAT, channels=CHANNELS,
 			rate=RATE, input=True,
 			frames_per_buffer=FRAMESIZE)
-	for i in range(10000):
+	while True:
 		frame = __FM.getFrameToWrite()
 		if frame == None:
-			#logging.debug('Frame manager returned None for input frame')
-			i -= 1
+			logging.debug('Frame manager returned None for input frame')
 		else:
 			__collect_frame(frame)
 			__FM.markFrameWritten(frame)

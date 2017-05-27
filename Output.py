@@ -17,7 +17,7 @@ def setFrameManager(fm):
 
 
 def run_thread():
-	for i in range(10000):
+	while True:
 		frame = __FM.getFrameToRead()
 		while frame != None: # output all available frames
 			__output_frame(frame)

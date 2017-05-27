@@ -1,5 +1,6 @@
 import time
 import FrameManager
+import Input
 
 
 
@@ -17,7 +18,7 @@ def setFrameManager(fm):
 
 
 def run_thread():
-	for i in range(10000):
+	while True:
 		frame = __FM.getFrameToProcess()
 		while frame != None: # process all available frames
 			__process_frame(frame)
